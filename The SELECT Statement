@@ -1,0 +1,59 @@
+select empno,ename,sal,job,case when sal<=1000 and job='CLERK' then 'low'
+                            when sal>1000 and sal<=15000 then 'medium'
+                            when sal>=1500 then 'high' end income 
+                            from emp where empno>7000;
+                            
+select  ENAME,EMPNO from emp order by sal desc fetch first row only ;
+select  ENAME,EMPNO from emp order by sal desc limit 1 
+
+create table depart(
+    trainno varchar2(6) primary key,
+    dest char,
+    stpoint char);
+    
+create table passenger(
+    pname integer primary key,
+    page integer not null,
+    trainno varchar2(4) );
+   -- trainno varchar2(4) foreign key references  depart(trainno) );
+    
+--select ENAME,EMPNO,SAL,sum(SAL) from EMP group by ENAME;
+select ename,empno from emp where sal>10 order by 2;
+select * from emp where ename='SMITH';
+-- alias
+select  ENAME,SAL+500  Salary from EMP;
+
+-- as alias
+select  ENAME,SAL+500 as  Salary from EMP;
+
+-- distinct
+select distinct ename ,sal from emp;
+
+
+
+--concatenation
+select ENAMe ||'id is '||   EMPNO from EMP   ;
+
+--distinct
+select distinct ename from emp;
+
+--Group by(doubt)
+SELECT ENAME, SUM(SAL) FROM  EMP 
+GROUP BY ENAME having SAL>2000;
+
+--select
+select * from emp;
+
+select count(empno),ename from emp GROUP BY JOB;
+
+--like
+select EMPNO,ENAME from emp where ename like 'S%';
+
+--between
+select ename,sal from emp where sal between 200 and 1000;
+
+--group by ,having 
+select ENAME,SUM(SAL) from EMP
+group by ENAME having SAL>4000;
+
+select deptno,ename from emp group by deptno having deptno > 10;
