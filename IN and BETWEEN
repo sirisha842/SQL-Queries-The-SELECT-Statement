@@ -1,0 +1,3 @@
+--between
+select ename,sal from emp where sal between 200 and 1000;
+
