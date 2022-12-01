@@ -1,0 +1,2 @@
+select EMPNO,ENAME from emp where ename like 'S%';
+
