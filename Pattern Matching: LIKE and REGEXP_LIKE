@@ -1,2 +1,19 @@
+--Simple REGEXP_LIKE() example
 select EMPNO,ENAME from emp where ename like 'S%';
+SELECT first_name
+FROM employees
+WHERE
+  REGEXP_LIKE( first_name, 'c' )
+ORDER BY first_name;
+--Matching the end of the line
+SELECT first_name
+FROM Employees
+WHERE REGEXP_LIKE( first_name, 'y$', 'i' )
+ORDER BY first_name;
 
+--Matching either a or b
+
+SELECT first_name
+FROM employees
+WHERE REGEXP_LIKE(first_name,'^m|^n','i')
+ORDER BY first_name;   
