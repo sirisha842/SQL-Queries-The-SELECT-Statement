@@ -1,0 +1,15 @@
+select ename,empno from emp where sal>10 order by 2;
+
+SELECT ENAME, SUM(SAL) FROM  EMP 
+GROUP BY ENAME having SAL>2000;
+
+select * from emp;
+
+select count(empno),ename from emp GROUP BY JOB;
+
+select ENAME,SUM(SAL) from EMP
+group by ENAME having SAL>4000;
+
+select deptno,ename from emp group by deptno having deptno > 10;
+
+select empno,ename,sal from emp group by deptno;
