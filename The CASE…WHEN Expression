@@ -1,0 +1,6 @@
+select empno,ename,sal,job,case when sal<=1000 and job='CLERK' then 'low'
+                            when sal>1000 and sal<=15000 then 'medium'
+                            when sal>=1500 then 'high' end income 
+                            from emp where empno>7000;
+                            
+                            
