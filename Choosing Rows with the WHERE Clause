@@ -1,0 +1,23 @@
+select EMPNO,ENAME from emp where ename like 'S%';
+
+select ename,sal from emp where sal between 200 and 1000;
+
+select rownum,empno, ename from emp where rownum<=17;
+
+select rownum,empno, ename from emp where rownum<=17
+MINUS 
+select rownum,empno,ename from emp where rownum<=15 ;
+
+select * from emp where rownum <=( select count (*)-13 from emp);
+
+SELECT * FROM USER_CONSTRAINTS WHERE table_name= "emp1";
+
+select * from emp where deptno=10;
+
+--1
+select count(*)  from election where year =2004;
+--2
+select count(*) from election where cand_sex ='F';
+--3
+select count(*) from election where st_name='West Bengal' and year=2004;
+--4
