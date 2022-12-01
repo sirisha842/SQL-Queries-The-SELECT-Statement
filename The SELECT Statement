@@ -57,3 +57,21 @@ select ENAME,SUM(SAL) from EMP
 group by ENAME having SAL>4000;
 
 select deptno,ename from emp group by deptno having deptno > 10;
+
+select rownum,empno, ename from emp where rownum<=17;
+
+select rownum,empno, ename from emp where rownum<=17
+MINUS 
+select rownum,empno,ename from emp where rownum<=15 ;
+
+select * from emp where rownum <=( select count (*)-13 from emp);
+
+
+
+desc emp;
+
+desc dept;
+
+select e.empno,e.ename,d.deptno,d.loc from emp e,dept d;
+
+
